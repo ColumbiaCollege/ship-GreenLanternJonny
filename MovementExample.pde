@@ -1,6 +1,7 @@
 //Movement Example Code
-//Please note, what I have here is not the only method to complete this assignment. If you would like to scrap it, you may.
+
 //based from: https://processing.org/examples/easing.html
+// made by: Jonathan Layes
 
 // image string
 PImage tardis;
