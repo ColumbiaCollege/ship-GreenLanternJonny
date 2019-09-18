@@ -17,6 +17,7 @@ float easing = 0.05;
 void setup() {
   //window modifications
   size(512, 512);
+
   img = loadImage("WeirdSpace.jpg"); // loading background image.
   tardis = loadImage("TARDIS.png"); // loading follower image.
 
@@ -27,7 +28,8 @@ void setup() {
 
 void draw() {
 
-  image(img, 0, 0, 512, 512); 
+  image(img, 256, 256, 512, 512); 
+
   //slowX: item to follow mouse slowly via X axis
 
   slowX = mouseX - xPos;
@@ -38,6 +40,6 @@ void draw() {
   yPos += slowY * easing;
 
   //draw shape
-
+  imageMode(CENTER); // tardis is centered to mouse
   image(tardis, xPos, yPos, 80, 80);
 }
