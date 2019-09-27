@@ -3,9 +3,11 @@
 //based from: https://processing.org/examples/easing.html
 // made by: Jonathan Layes
 
+space weird;// Object for background
+ship policebox = new ship(); // Object Police Box
 // image string
 PImage tardis;
-PImage img; 
+
 //floats are being set up as strings.
 float xPos; //x coordinate
 float yPos; //y coordinate
@@ -18,28 +20,22 @@ void setup() {
   //window modifications
   size(512, 512);
 
-  img = loadImage("WeirdSpace.jpg"); // loading background image.
-  tardis = loadImage("TARDIS.png"); // loading follower image.
+  weird = new space();
 
-  //shape properties
-  noStroke();
-  fill(0, 0, 255);
+
+  weird.display();
+  // loading background image.
+
+  // loading follower image.
+  tardis = loadImage("TARDIS.png");
 }
 
 void draw() {
 
-  image(img, 256, 256, 512, 512); 
 
-  //slowX: item to follow mouse slowly via X axis
+  weird.display();
 
-  slowX = mouseX - xPos;
-  xPos += slowX * easing;
-
-  //slowY: item to follow mouse slowly via Y axis
-  slowY = mouseY - yPos; 
-  yPos += slowY * easing;
 
   //draw shape
-  imageMode(CENTER); // tardis is centered to mouse
-  image(tardis, xPos, yPos, 80, 80);
+  policebox.show();
 }
